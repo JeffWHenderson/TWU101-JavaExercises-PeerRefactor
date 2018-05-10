@@ -53,28 +53,23 @@ public class DiamondExercises {
     WHY NOT CALL THIS METHOD INSIDE THEM?
  */
     private static void drawADiamond(int n) {
-        int lineCount = n;
-        int starCount = 1;
-        int spaceCount = n - 1;
-
         //top part
-        for(int i = 0; i < lineCount; i++) {
-            printSpaces(spaceCount);
-            printStars(starCount);
-            starCount += 2;
-            spaceCount -= 1;
-            System.out.println();
-        }
-
-        starCount -= 2;
-        spaceCount += 1;
+        drawAnIsoscelesTriangle(n);
 
         //bottom part
-        for(int i = 0; i < lineCount; i++) {
-            starCount -= 2;
-            spaceCount += 1;
+        drawBottomHalfOfDiamond(n);
+    }
+
+    private static void drawBottomHalfOfDiamond(int n) {
+        int lineCount = n - 1;
+        int starCount = n*2 - 3;
+        int spaceCount = 1;
+
+        for(; n > 0; n--) {
             printSpaces(spaceCount);
             printStars(starCount);
+            starCount -= 2;
+            spaceCount += 1;
             System.out.println();
         }
     }
@@ -104,12 +99,6 @@ public class DiamondExercises {
         System.out.println("Felix");
 
         //bottom part
-        for(int i = 0; i < lineCount; i++) {
-            starCount -= 2;
-            spaceCount += 1;
-            printSpaces(spaceCount);
-            printStars(starCount);
-            System.out.println();
-        }
+        drawBottomHalfOfDiamond(n);
     }
 }
