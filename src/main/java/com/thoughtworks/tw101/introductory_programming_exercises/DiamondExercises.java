@@ -12,6 +12,7 @@ public class DiamondExercises {
 //              *
 //             ***
 //            *****
+
     private static void drawAnIsoscelesTriangle(int n) {
         int lineCount = n;
         int starCount = 1;
@@ -45,6 +46,12 @@ public class DiamondExercises {
 //            *****
 //             ***
 //              *
+
+    /*
+    DUPLICATE CODE (DISPENSABLE) AND LONG METHODS (BLOATER)
+    ALL SHAPES DRAW AN ISOSCELES TRIANGLE AND REUSE THIS CODE.
+    WHY NOT CALL THIS METHOD INSIDE THEM?
+ */
     private static void drawADiamond(int n) {
         int lineCount = n;
         int starCount = 1;
