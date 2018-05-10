@@ -19,11 +19,19 @@ public class GuessingGame {
         A method contains too many lines of code.
         Generally, any method longer than ten lines should make you start asking questions.
          */
-    public void play(int lowerLimit, int upperLimit) throws NumberFormatException {
+    public void play(int lowerLimit, int upperLimit) {
         resetGame(lowerLimit, upperLimit);
 
         System.out.println("Let's play a game (Jigsaw voice)");
         System.out.println("Guess a random number between "+lowerLimit+" and "+upperLimit+" \n");
+
+        mainGameLoop();
+
+        System.out.println("You guessed "+allGuessesList.size()+ " times!");
+        System.out.println("Here's your list of guesses "+ allGuessesList.toString());
+    }
+
+    private void mainGameLoop() throws NumberFormatException  {
         Scanner reader = new Scanner(System.in);
 
         try {
@@ -31,15 +39,7 @@ public class GuessingGame {
                 System.out.println("Please enter your guess:");
                 userGuess = reader.nextInt();
 
-                if(userGuess == randomNumber) {
-                    userWon = true;
-                    System.out.println("You guessed correct!\n");
-                } else if (userGuess > randomNumber) {
-                    System.out.println("TOO HIGH!, try again!\n");
-                } else {
-                    System.out.println("TOO LOW!, try again!\n");
-                }
-
+                checkUserGuess(userGuess);
                 allGuessesList.add(userGuess);
             }
         } catch (NumberFormatException e) {
@@ -49,9 +49,17 @@ public class GuessingGame {
         }
 
         reader.close();
+    }
 
-        System.out.println("You guessed "+allGuessesList.size()+ " times!");
-        System.out.println("Here's your list of guesses "+ allGuessesList.toString());
+    private void checkUserGuess(int userGuess) {
+        if(userGuess == randomNumber) {
+            userWon = true;
+            System.out.println("You guessed correct!\n");
+        } else if (userGuess > randomNumber) {
+            System.out.println("TOO HIGH!, try again!\n");
+        } else {
+            System.out.println("TOO LOW!, try again!\n");
+        }
     }
 
     private int GetRandomNumber() {
