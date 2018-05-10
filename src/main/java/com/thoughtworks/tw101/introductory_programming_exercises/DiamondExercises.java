@@ -47,18 +47,13 @@ public class DiamondExercises {
 //             ***
 //              *
 
-    /*
-    DUPLICATE CODE (DISPENSABLE) AND LONG METHODS (BLOATER)
-    ALL SHAPES DRAW AN ISOSCELES TRIANGLE AND REUSE THIS CODE.
-    WHY NOT CALL THIS METHOD INSIDE THEM?
- */
+
     private static void drawADiamond(int n) {
         drawAnIsoscelesTriangle(n);
         drawBottomHalfOfDiamond(n);
     }
 
     private static void drawBottomHalfOfDiamond(int n) {
-        int lineCount = n - 1;
         int starCount = n*2 - 3;
         int spaceCount = 1;
 
@@ -94,8 +89,6 @@ public class DiamondExercises {
         }
 
         System.out.println("Felix");
-
-        //bottom part
         drawBottomHalfOfDiamond(n);
     }
 }

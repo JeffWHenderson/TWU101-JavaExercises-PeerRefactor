@@ -3,22 +3,13 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//Identify two dispensables, two bloaters, and one OO abuser.
-
 public class GuessingGame {
     boolean userWon = false;
     int lowerLimit, upperLimit, userGuess, randomNumber;
     ArrayList<Integer> allGuessesList;
 
-    public GuessingGame() {
-        allGuessesList = new ArrayList<>();
-    }
+    public GuessingGame() {allGuessesList = new ArrayList<>();}
 
-
-        /*  LONG METHOD (BLOATER)
-        A method contains too many lines of code.
-        Generally, any method longer than ten lines should make you start asking questions.
-         */
     public void play(int lowerLimit, int upperLimit) {
         resetGame(lowerLimit, upperLimit);
 
