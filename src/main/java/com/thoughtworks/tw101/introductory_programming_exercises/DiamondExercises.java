@@ -53,10 +53,7 @@ public class DiamondExercises {
     WHY NOT CALL THIS METHOD INSIDE THEM?
  */
     private static void drawADiamond(int n) {
-        //top part
         drawAnIsoscelesTriangle(n);
-
-        //bottom part
         drawBottomHalfOfDiamond(n);
     }
 
